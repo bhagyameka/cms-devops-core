@@ -22,26 +22,25 @@ stages {
  stage ('Deploy on Weblogic') {
 	 steps {
 		 script{
-	if ("$DEPLOY_TO" == 'dev') {
+	if ("$DEPLOY_TO" == 'master') {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
           echo '*******deploy on weblogic done*******'
           }
 		
- else if ("$DEPLOY_TO" == 'sit') {
+ else if ("$DEPLOY_TO" == 'develop') {
           echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
           echo '*******deploy on weblogic done*******'
           }
 		
-else if ("$DEPLOY_TO" == 'uat') {
+else if ("$DEPLOY_TO" == 'integrate') {
           echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
           echo '*******deploy on weblogic done*******'
           }
 		
  else {
-          echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
-          echo '*******deploy on weblogic done*******'
-          }
+          echo "No such branch found--$DEPLOY_TO"
+                   }
 		}
 }
 }
