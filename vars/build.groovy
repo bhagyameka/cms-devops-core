@@ -10,8 +10,16 @@ def call(String branch = 'null') {
 				steps {
 					echo "You have chosen branch $BRANCH_NAME"
 					println "$BRANCH_NAME"
+					script{
+						if ("$BRANCH_NAME" == 'master' && "$BRANCH_NAME" == 'develop' && "$BRANCH_NAME" == 'develop'){
 					git branch: "$BRANCH_NAME", url: "https://github.com/bhagyameka/calculator-scriptsrepo.git", credentialsId: 'c6947d68-906d-4126-a88a-d93c8d4a1ec8'
-				}	
+				          }
+						else 
+						{
+					         echo " No such branch : $BRANCH_NAME "
+						}
+					}
+				}
 			}
 		        stage('build using maven') {
 				steps {
