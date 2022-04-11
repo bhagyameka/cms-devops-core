@@ -10,7 +10,7 @@ def call(String branch = 'null') {
 				steps {
 					echo "You have chosen branch $BRANCH_NAME"
 					println "$BRANCH_NAME"
-					git branch: "$BRANCH_NAME", url: "https://github.com/bhagyameka/calculator-bd.git", credentialsId: 'c6947d68-906d-4126-a88a-d93c8d4a1ec8'
+					git branch: "$BRANCH_NAME", url: "https://github.com/bhagyameka/calculator-scriptsrepo.git", credentialsId: 'c6947d68-906d-4126-a88a-d93c8d4a1ec8'
 				}	
 			}
 		        stage('build using maven') {
