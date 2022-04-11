@@ -17,6 +17,7 @@ def call(String branch = 'null') {
 						else 
 						{
 					         echo " No such branch : $BRANCH_NAME "
+						 sh 'exit 1'
 						}
 					}
 				}
