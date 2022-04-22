@@ -45,4 +45,4 @@ stage ('Upload to Jfrog') {
 		}
 		
 	}
-}
+
