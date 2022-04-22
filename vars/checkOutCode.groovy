@@ -1,4 +1,4 @@
-static def call(String branch = 'null') {
+ def call(String branch = 'null') {
 	
 		environment {
 			BRANCH_NAME = "${branch}"
