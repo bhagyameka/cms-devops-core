@@ -4,7 +4,7 @@ import checkOutCode
 		stages {
 			stage('Source Code from SCM') {
 				steps {
-					checkOutCode.call("${BRANCH_NAME}")
+					checkOutCode.call("$BRANCH_NAME")
 				}
 			}
 		        stage('build using maven') {
@@ -15,13 +15,12 @@ import checkOutCode
 				}	
 			}
 			stage('unit testing') {
-    steps {
-        echo '*******unit testing starts*******'
-        junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'   
-        echo '*******unit testing ends*******'
-               
-    }
-}
+                               steps {
+       			       echo '*******unit testing starts*******'
+                               junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'   
+                               echo '*******unit testing ends*******'
+                                     }
+                               }
 
 stage ('Test using CheckMarX') {
    
