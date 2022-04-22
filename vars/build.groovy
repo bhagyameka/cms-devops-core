@@ -1,14 +1,12 @@
 import checkOutCode
-environment {
-			BRANCH_NAME = null
-		}
+
 	pipeline {
 		agent {label 'slave2'}
 		stages {
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					checkOutCode.fromgithub("develop")
+					checkOutCode.fromgithub("$branch")
 				}
 			}
 			}
