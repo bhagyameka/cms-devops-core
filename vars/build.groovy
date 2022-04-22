@@ -4,8 +4,10 @@ import checkOutCode
 		stages {
 			stage('Source Code from SCM') {
 				steps {
+					script{
 					checkOutCode.call("$BRANCH_NAME")
 				}
+			}
 			}
 		        stage('build using maven') {
 				steps {
