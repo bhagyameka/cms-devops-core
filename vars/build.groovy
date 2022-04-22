@@ -5,7 +5,7 @@ import checkOutCode
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					checkOutCode.fromgithub("$BRANCH_NAME")
+					checkOutCode.fromgithub("develop")
 				}
 			}
 			}
