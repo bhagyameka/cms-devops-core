@@ -3,7 +3,7 @@ static def call(String branch = 'null') {
 		environment {
 			BRANCH_NAME = "${branch}"
 		}
-		echo "You have chosen branch $BRANCH_NAME"
+		echo "You have chosen branch:"
 		println "$BRANCH_NAME"
 		script{
 		   if ( "$BRANCH_NAME" == 'develop'){
