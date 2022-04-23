@@ -1,4 +1,5 @@
 import checkOutCode
+def coc = new checkOutCode()
 
 	pipeline {
 		agent {label 'slave2'}
@@ -6,7 +7,7 @@ import checkOutCode
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					checkOutCode.fromgithub("$branch")
+					coc.fromgithub("$branch")
 				}
 			}
 			}
