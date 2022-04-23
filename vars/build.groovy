@@ -1,4 +1,5 @@
-coc = new checkOutCode()
+import sourcecode
+sourcecode sc = new sourcecode();
 
 
 	pipeline {
@@ -7,7 +8,7 @@ coc = new checkOutCode()
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					coc.fromgithub("develop")
+					sc.fromgithub("develop")
 				}
 			}
 			}
