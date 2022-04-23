@@ -1,4 +1,5 @@
- def fromgithub (String branch = 'null') {
+class sourcecode { 
+def fromgithub (String branch = 'null') {
 	
 		environment {
 			BRANCH_NAME = "${branch}"
@@ -16,7 +17,7 @@
 			}
 		}
 	    }
-	
+}
     
   
   
