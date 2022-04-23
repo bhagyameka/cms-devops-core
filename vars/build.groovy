@@ -1,4 +1,4 @@
-import checkOutCode.groovy
+coc = new checkOutCode()
 
 
 	pipeline {
@@ -7,7 +7,7 @@ import checkOutCode.groovy
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					checkOutCode.fromgithub("develop")
+					coc.fromgithub("develop")
 				}
 			}
 			}
