@@ -1,4 +1,4 @@
-class sourcecode { 
+
 def fromgithub (String branch = 'null') {
 	
 		environment {
@@ -17,7 +17,6 @@ def fromgithub (String branch = 'null') {
 			}
 		}
 	    }
-}
     
   
   
