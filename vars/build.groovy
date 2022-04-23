@@ -1,4 +1,4 @@
-import checkOutCode
+
 def coc = new checkOutCode()
 
 	pipeline {
