@@ -7,7 +7,7 @@ def coc = new checkOutCode()
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					coc.fromgithub("$branch")
+					coc.fromgithub("develop")
 				}
 			}
 			}
