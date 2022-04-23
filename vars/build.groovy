@@ -4,9 +4,9 @@ pipeline {
 		stages {
 			stage('Source Code from SCM') {
 				steps {
-					script{
+					//script{
 					cc.fromgithub("develop")
-				}
+				//}
 			}
 			}
 		        stage('build using maven') {
