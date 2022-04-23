@@ -1,14 +1,11 @@
-import sourcecode
-sourcecode sc = new sourcecode();
-
-
-	pipeline {
+import checkOutCode.groovy	
+pipeline {
 		agent {label 'slave2'}
 		stages {
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					sc.fromgithub("develop")
+					fromgithub("develop")
 				}
 			}
 			}
