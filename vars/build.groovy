@@ -1,5 +1,5 @@
+import checkOutCode.groovy
 
-def coc = new checkOutCode()
 
 	pipeline {
 		agent {label 'slave2'}
@@ -7,7 +7,7 @@ def coc = new checkOutCode()
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					coc.fromgithub("develop")
+					checkOutCode.fromgithub("develop")
 				}
 			}
 			}
