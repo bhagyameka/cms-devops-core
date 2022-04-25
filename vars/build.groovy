@@ -12,6 +12,7 @@ pipeline {
 					echo "You have chosen branch:"
 	                                println "$BN"
 					script{
+					echo " You are on stage Source Code from SCM "	
 					tools.coc("$BN")
 				}
 			}
