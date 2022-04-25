@@ -1,4 +1,5 @@
-evaluate(new File("checkOutCode.groovy"))
+GroovyShell shell = new GroovyShell()
+def tools = shell.parse(new File('checkOutCode.groovy'))
 def call(String br = 'null'){
 pipeline {
 	environment {
@@ -9,7 +10,7 @@ pipeline {
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					checkOutCode("BN")
+					tools.coc("BN")
 				}
 			}
 			}
