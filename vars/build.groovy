@@ -19,11 +19,14 @@ pipeline {
 			}
 		        stage('build using maven') {
 				steps {
+					
 					echo "building using maven"
 					//sh 'mvn --version'
 					//sh 'mvn clean package'
+					script{
 			                checkOutCode.mavenbuild()
-				}	
+					}
+					}	
 			}
 			stage('unit testing') {
                                steps {
