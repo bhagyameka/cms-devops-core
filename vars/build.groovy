@@ -1,4 +1,5 @@
 evaluate(new File("checkOutCode.groovy"))
+def call(){
 pipeline {
 		agent {label 'slave2'}
 		stages {
@@ -47,3 +48,4 @@ stage ('Upload to Jfrog') {
 		
 	}
 
+}
