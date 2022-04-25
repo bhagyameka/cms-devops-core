@@ -1,5 +1,5 @@
 
-def fromgithub (String branch = 'null') {
+def fromgithub(String branch = 'null') {
 pipeline {
 	environment {
 			BRANCH_NAME = "${branch}"
