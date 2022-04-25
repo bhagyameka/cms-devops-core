@@ -6,7 +6,7 @@ def call(String branch = 'null') {
 					
 					
 					 if ( "$branch" == 'develop'){
-			                    git branch: "$branch", url: "https://github.com/bhagyameka/calculator-scriptsrepo.git", credentialsId: 'c6947d68-906d-4126-a88a-d93c8d4a1ec8'
+			                    git branch: "$branch", url: "https://github.com/bhagyameka/calculator-cms.git", credentialsId: 'c6947d68-906d-4126-a88a-d93c8d4a1ec8'
 		                           }
 		                        else 
 			                  {
