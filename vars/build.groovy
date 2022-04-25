@@ -10,7 +10,7 @@ pipeline {
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					tools.coc("BN")
+					tools.coc("$BN")
 				}
 			}
 			}
