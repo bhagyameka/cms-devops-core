@@ -9,6 +9,8 @@ pipeline {
 		stages {
 			stage('Source Code from SCM') {
 				steps {
+					echo "You have chosen branch:"
+	                                println "$BN"
 					script{
 					tools.coc("$BN")
 				}
