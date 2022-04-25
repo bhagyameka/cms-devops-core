@@ -1,11 +1,11 @@
-cc = new checkOutCode()	
+evaluate(new File("checkOutCode.groovy"))
 pipeline {
 		agent {label 'slave2'}
 		stages {
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					cc.fromgithub("develop")
+					checkOutCode.fromgithub("develop")
 				}
 			}
 			}
