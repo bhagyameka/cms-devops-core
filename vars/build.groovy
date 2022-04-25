@@ -1,5 +1,5 @@
 evaluate(new File("checkOutCode.groovy"))
-def call(string br = 'null'){
+def call(String br = 'null'){
 pipeline {
 	environment {
 			BN = "${br}"
