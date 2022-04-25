@@ -16,4 +16,10 @@ def fromgithub(String branch = 'null') {
 				
 			}
 
-  
+  def mavenbuild() {
+ 
+		echo "You have chose to build using maven"
+	        sh 'mvn --version'
+	        sh 'mvn clean package'                       
+				
+			}
