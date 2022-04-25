@@ -1,12 +1,15 @@
 evaluate(new File("checkOutCode.groovy"))
-def call(){
+def call(string br = 'null'){
 pipeline {
+	environment {
+			BN = "${br}"
+		}
 		agent {label 'slave2'}
 		stages {
 			stage('Source Code from SCM') {
 				steps {
 					script{
-					checkOutCode()
+					checkOutCode("BN")
 				}
 			}
 			}
