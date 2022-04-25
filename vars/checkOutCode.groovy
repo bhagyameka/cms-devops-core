@@ -1,5 +1,5 @@
 
-def call(String branch = 'null') {
+def coc(String branch = 'null') {
  
 					echo "You have chosen branch:"
 	                                println "${branch}"
