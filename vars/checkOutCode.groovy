@@ -1,5 +1,5 @@
 
-def call(String branch = 'null') {
+def fromgithub(String branch = 'null') {
  
 					echo "You have chosen branch:"
 	                                println "${branch}"
