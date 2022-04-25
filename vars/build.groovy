@@ -13,7 +13,7 @@ pipeline {
 	                                println "$BN"
 					script{
 					echo " You are on stage Source Code from SCM "	
-					tools.coc("$BN")
+					tools("$BN")
 				}
 			}
 			}
