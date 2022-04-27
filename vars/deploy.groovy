@@ -25,6 +25,7 @@ stages {
 	if ("$DEPLOY_TO" == 'develop') {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
+	  sh 'pwd'	
           echo '*******deploy on weblogic done*******'
           }
 		
