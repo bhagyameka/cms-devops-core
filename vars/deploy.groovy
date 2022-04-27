@@ -30,6 +30,7 @@ stages {
 		
  else  {
           echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
+	  sh 'exit 1'
                     }
 		
 		}
