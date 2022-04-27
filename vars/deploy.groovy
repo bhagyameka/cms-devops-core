@@ -26,7 +26,7 @@ stages {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
 	  sh 'pwd'
-	  sh 'mv hello.txt `date +"%d-%m-%Y-%H.%M"`hello.txt'
+	  sh 'mv *.txt hello`date +"%d-%m-%Y-%H:%M"`.txt'
 	  echo '*******deploy on weblogic done*******'
           }
 		
