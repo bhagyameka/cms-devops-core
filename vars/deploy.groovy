@@ -1,3 +1,4 @@
+@Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
 def call(String branch = 'null') {
 	echo "This is shared library deploy: ${branch}"
 pipeline {
@@ -26,7 +27,8 @@ stages {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
 	  sh 'pwd'
-	  sh 'mv *.txt hello`date +"%d-%m-%Y-%H:%M"`.txt'
+	  //sh 'mv *.txt hello`date +"%d-%m-%Y-%H:%M"`.txt'
+	  sh 'mv *.txt hello-${timeStamp}.txt'
 	  echo '*******deploy on weblogic done*******'
           }
 		
