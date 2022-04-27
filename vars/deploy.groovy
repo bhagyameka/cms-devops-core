@@ -1,4 +1,5 @@
-def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
+import groovy.transform.Field
+@Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
 def call(String branch = 'null') {
 	echo "This is shared library deploy: ${branch}"
 pipeline {
