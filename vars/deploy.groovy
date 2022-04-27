@@ -4,7 +4,7 @@ pipeline {
      environment {
 			DEPLOY_TO = "${branch}"
 		}
-agent any
+agent {label 'slave2'}
 
 stages {
 
@@ -22,25 +22,16 @@ stages {
  stage ('Deploy on Weblogic') {
 	 steps {
 		 script{
-	if ("$DEPLOY_TO" == 'master') {
+	if ("$DEPLOY_TO" == 'develop') {
   
-          echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
+          echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
           echo '*******deploy on weblogic done*******'
           }
 		
- else if ("$DEPLOY_TO" == 'develop') {
-          echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
-          echo '*******deploy on weblogic done*******'
-          }
+ else  {
+          echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
+                    }
 		
-else if ("$DEPLOY_TO" == 'integrate') {
-          echo "*******deploy on weblogic Start to $DEPLOY_TO *******"
-          echo '*******deploy on weblogic done*******'
-          }
-		
- else {
-          echo "No such branch found--$DEPLOY_TO"
-                   }
 		}
 }
 }
