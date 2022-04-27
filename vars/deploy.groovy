@@ -30,7 +30,7 @@ stages {
 	  sh 'pwd'
 	  //sh 'mv *.txt hello`date +"%d-%m-%Y-%H:%M"`.txt'
 	  echo "${timeStamp}"
-		sh 'mv *.txt hello_${'timeStamp'}.txt'
+	  sh 'mv *.txt hello_${timeStamp}.txt'
 	  echo '*******deploy on weblogic done*******'
           }
 		
