@@ -48,6 +48,7 @@ stages {
 }
 }
 	else {
-		echo "Deployment is not allowed"
+		echo "Deployment is not allowed on ${branch} ENV"
+		sh 'exit 1'
 	}
 }
