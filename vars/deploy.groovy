@@ -18,8 +18,8 @@ stages {
         
  stage ('Deploy on Weblogic') {
 	 steps {
-		 script{
-	if ("$DEPLOY_TO" == 'develop') {
+		// script{
+	//if ("$DEPLOY_TO" == 'develop') {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
 	  sh 'pwd'
@@ -27,14 +27,14 @@ stages {
 	  //echo "${timeStamp}"
 	  //sh 'mv *.txt hello_${timeStamp}.txt'
 	  echo '*******deploy on weblogic done*******'
-          }
+         // }
 		
- else  {
-          echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
-	  sh 'exit 1'
-                   }
+// else  {
+ //         echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
+//	  sh 'exit 1'
+   //                }
 		
-		}
+	//	}
 }
 }
 
