@@ -2,7 +2,7 @@ import groovy.transform.Field
 @Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
 def call(String branch = 'null') {
 	echo "This is shared library deploy: ${branch}"
-	if (${branch} == 'develop') {
+	if ("${branch}" == 'develop') {
 pipeline {
      environment {
 			DEPLOY_TO = "${branch}"
