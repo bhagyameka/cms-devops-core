@@ -1,10 +1,7 @@
 import groovy.transform.Field
 @Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
 def call(String branch = 'null') {
-	echo "This is shared library deploy: ${branch}"
-	script{
-	if ("${branch}" == 'develop') {
-pipeline {
+	pipeline {
      environment {
 			DEPLOY_TO = "${branch}"
 		}
@@ -12,7 +9,7 @@ agent {label 'slave2'}
 
 stages {
 
-
+if ("$DEPLOY_TO" == 'develop') {
  stage ('Download from Jfrog') {
       steps {
           echo '*******download from JFrog start*******'
@@ -20,8 +17,6 @@ stages {
           echo '*******download from JFrog End*******'
       }
  }
-
-
         
  stage ('Deploy on Weblogic') {
 	 steps {
@@ -44,9 +39,6 @@ stages {
 	//	}
 }
 }
-	
-}
-}
 }
 	else {
 		echo "Deployment is not allowed on ${branch} ENV"
@@ -54,3 +46,6 @@ stages {
 	}
 }
 }
+}
+
+
