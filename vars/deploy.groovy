@@ -2,6 +2,7 @@ import groovy.transform.Field
 @Field def timeStamp = Calendar.getInstance().getTime().format('YYYYMMdd-hhmmss',TimeZone.getTimeZone('CST'))
 def call(String branch = 'null') {
 	echo "This is shared library deploy: ${branch}"
+	if (${branch} == 'develop') {
 pipeline {
      environment {
 			DEPLOY_TO = "${branch}"
@@ -24,7 +25,7 @@ stages {
  stage ('Deploy on Weblogic') {
 	 steps {
 		 script{
-	if ("$DEPLOY_TO" == 'develop') {
+	//if ("$DEPLOY_TO" == 'develop') {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
 	  sh 'pwd'
@@ -32,12 +33,12 @@ stages {
 	  echo "${timeStamp}"
 	  //sh 'mv *.txt hello_${timeStamp}.txt'
 	  echo '*******deploy on weblogic done*******'
-          }
+        //  }
 		
- else  {
-          echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
-	  sh 'exit 1'
-                    }
+ //else  {
+ //         echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
+//	  sh 'exit 1'
+//                    }
 		
 		}
 }
@@ -45,4 +46,8 @@ stages {
 	
 }
 }
+}
+	else {
+		echo "Deployment is not allowed"
+	}
 }
