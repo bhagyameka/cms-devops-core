@@ -8,8 +8,6 @@ def call(String branch = 'null') {
 agent {label 'slave2'}
 
 stages {
-
-if ("$DEPLOY_TO" == 'develop') {
  stage ('Download from Jfrog') {
       steps {
           echo '*******download from JFrog start*******'
@@ -20,30 +18,27 @@ if ("$DEPLOY_TO" == 'develop') {
         
  stage ('Deploy on Weblogic') {
 	 steps {
-		// script{
-	//if ("$DEPLOY_TO" == 'develop') {
+		 script{
+	if ("$DEPLOY_TO" == 'develop') {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
 	  sh 'pwd'
 	  //sh 'mv *.txt hello`date +"%d-%m-%Y-%H:%M"`.txt'
-	  echo "${timeStamp}"
+	  //echo "${timeStamp}"
 	  //sh 'mv *.txt hello_${timeStamp}.txt'
 	  echo '*******deploy on weblogic done*******'
-        //  }
+          }
 		
- //else  {
- //         echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
-//	  sh 'exit 1'
-//                    }
+ else  {
+          echo "*******deployment to $DEPLOY_TO ENV is not allowed*******"
+	  sh 'exit 1'
+                   }
 		
-	//	}
+		}
 }
 }
-}
-	else {
-		echo "Deployment is not allowed on ${branch} ENV"
-		sh 'exit 1'
-	}
+
+	
 }
 }
 }
