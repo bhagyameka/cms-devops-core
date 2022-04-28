@@ -10,9 +10,16 @@ agent {label 'slave2'}
 stages {
  stage ('Download from Jfrog') {
       steps {
-          echo '*******download from JFrog start*******'
-       
+	      script{
+          if ("$DEPLOY_TO" == 'develop'){
+		echo '*******download from JFrog start*******'  
           echo '*******download from JFrog End*******'
+	  }
+		      else {
+			      echo "Deployment to $DEPLOY_TO ENV is not possible"
+			      sh 'exit 1'
+		      }
+	      }
       }
  }
         
