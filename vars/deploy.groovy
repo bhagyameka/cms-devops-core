@@ -24,7 +24,7 @@ stages {
         
  stage ('Deploy on Weblogic') {
 	 steps {
-		 script{
+		// script{
 	//if ("$DEPLOY_TO" == 'develop') {
   
           echo "*******deploy on weblogic Start to $DEPLOY_TO ENV *******"
@@ -40,7 +40,7 @@ stages {
 //	  sh 'exit 1'
 //                    }
 		
-		}
+	//	}
 }
 }
 	
