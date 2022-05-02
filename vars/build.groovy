@@ -13,12 +13,13 @@ pipeline {
 	                                println "$BN"
 					script{
 					echo " You are on stage Source Code from SCM "	
-						if ("$BN" == 'develop'){
-					checkOutCode.github("$BN")
+						if ("$BN" == 'master' || "$BN" == 'sit' || "$BN" == 'uat' ){
+					        echo " Build on $BN branch is not allowed"
+					        sh 'exit 1'
 						}
 						else{
-							echo " Build on $BN branch is not allowed"
-							sh 'exit 1'
+							checkOutCode.github("$BN")
+							
 						}
 				}
 			}
