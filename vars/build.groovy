@@ -18,7 +18,7 @@ pipeline {
 					        sh 'exit 1'
 						}
 						else{
-							checkOutCode.github("$BN")
+							checkOutCode.fromgithub("$BN")
 							
 						}
 				}
