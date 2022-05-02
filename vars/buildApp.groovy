@@ -1,7 +1,7 @@
 def SourcecodeCheckout(String br = 'null'){
   echo "You have chosen branch:"
   println "$br"
-  checkOutCode.github("$br")
+  checkOutCode.fromgithub("$br")
 }
 def maven(){
   echo "building using maven"
