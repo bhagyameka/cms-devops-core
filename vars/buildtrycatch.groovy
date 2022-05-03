@@ -23,12 +23,13 @@ pipeline {
 							
 						}
 				}
-						catch(err){
-    currentBuild.result = "FAILURE"
-    step([$class: 'Mailer', notifyUnstableEveryBuild:  
- true,recipients:'bhagya.ch.26@gmail.com', sendToIndividuals: true])
-throw err
+						
+    catch (Exception e) {
+	    currentBuild.result = "FAILURE"
+      echo 'Exception occurred: ' + e.toString()
+      sh 'Handle the exception!'
   }
+  
 					}
 					 
 					
