@@ -1,6 +1,6 @@
 def call(String br = 'null'){
 pipeline {
-  try{
+ 
 	environment {
 			BN = "${br}"
 		}
@@ -10,6 +10,7 @@ pipeline {
 				steps {
 					echo "You have chosen branch:"
 	                                println "$BN"
+					try{
 					script{
 					echo " You are on stage Source Code from SCM "	
 						if ("$BN" == 'master' || "$BN" == 'sit' || "$BN" == 'uat' ){
@@ -21,6 +22,14 @@ pipeline {
 							
 						}
 				}
+					}
+					 catch(err){
+    currentBuild.result = "FAILURE"
+    step([$class: 'Mailer', notifyUnstableEveryBuild:  
+ true,recipients:'bhagya.ch.26@gmail.com', sendToIndividuals: true])
+throw err
+  }
+					
 			}
 			}
 		        stage('build using maven') {
@@ -63,14 +72,9 @@ stage ('Upload to Jfrog') {
 }
 		}
 		
-	}
+	
 
 
-  catch(err){
-    currentBuild.result = "FAILURE"
-    step([$class: 'Mailer', notifyUnstableEveryBuild:  
- true,recipients:'bhagya.ch.26@gmail.com', sendToIndividuals: true])
-throw err
-  }
+ 
 }
 }
