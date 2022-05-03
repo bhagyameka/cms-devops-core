@@ -27,7 +27,7 @@ pipeline {
     catch (Exception e) {
 	    currentBuild.result = "FAILURE"
       echo 'Exception occurred: ' + e.toString()
-      //sh 'Handle the exception!'
+      sh 'Handle the exception!'
 	     echo e.getMessage()
   }
   
