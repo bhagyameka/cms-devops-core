@@ -10,8 +10,9 @@ pipeline {
 				steps {
 					echo "You have chosen branch:"
 	                                println "$BN"
-					try{
+					
 					script{
+						try{
 					echo " You are on stage Source Code from SCM "	
 						if ("$BN" == 'master' || "$BN" == 'sit' || "$BN" == 'uat' ){
 					        echo " Build on $BN branch is not allowed"
@@ -22,13 +23,14 @@ pipeline {
 							
 						}
 				}
-					}
-					 catch(err){
+						catch(err){
     currentBuild.result = "FAILURE"
     step([$class: 'Mailer', notifyUnstableEveryBuild:  
  true,recipients:'bhagya.ch.26@gmail.com', sendToIndividuals: true])
 throw err
   }
+					}
+					 
 					
 			}
 			}
