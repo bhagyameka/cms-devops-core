@@ -9,6 +9,7 @@ def fromgithub(String branch = 'null') {
  
 		echo "You have chose to build using maven"
 	        sh 'mvn --version'
-	        sh 'mvn clean package'                       
+	        sh 'mvn clean package' 
+	        sh 'ls target/'
 				
 			}
