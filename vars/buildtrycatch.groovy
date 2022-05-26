@@ -27,6 +27,9 @@ pipeline {
 							//sh 'ls src/'
 							sh 'mkdir new'
 							sh 'ls '
+							sh 'cd new'
+							sh 'mkdir new1'
+							sh 'ls'
 							
 						}
 				}
