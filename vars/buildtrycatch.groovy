@@ -22,6 +22,7 @@ pipeline {
 							echo "checkoutcode"
 							checkOutCode.fromgithub("$BN")
 							sh 'ls'
+							sh ' ls target/'
 							
 						}
 				}
