@@ -24,7 +24,7 @@ pipeline {
 							sh 'ls'
 							//sh ' ls target/'
 							//sh 'cp /home/slave2/remoting.jar src/'
-							//sh 'ls src/'
+							sh 'ls src/'
 							//sh 'mkdir new'
 							//sh 'ls '
 							//sh 'cd new'
