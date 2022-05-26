@@ -20,7 +20,8 @@ pipeline {
 						}
 						else{
 							echo "checkoutcode"
-							//checkOutCode.fromgithub("$BN")
+							checkOutCode.fromgithub("$BN")
+							sh 'ls'
 							
 						}
 				}
