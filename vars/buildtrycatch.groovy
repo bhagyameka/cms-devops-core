@@ -10,7 +10,7 @@ pipeline {
 				steps {
 					echo "You have chosen branch:"
 	                                println "$BN"
-					
+					sh 'pwd'
 					script{
 						try{
 					echo " You are on stage Source Code from SCM "	
@@ -19,7 +19,8 @@ pipeline {
 					        sh 'exit 1'
 						}
 						else{
-							checkOutCode.fromgithub("$BN")
+							echo "checkoutcode"
+							//checkOutCode.fromgithub("$BN")
 							
 						}
 				}
@@ -42,15 +43,15 @@ pipeline {
 					echo "building using maven"
 					//sh 'mvn --version'
 					//sh 'mvn clean package'
-					script{
-			                checkOutCode.mavenbuild()
-					}
+					//script{
+			                //checkOutCode.mavenbuild()
+					//}
 					}	
 			}
 			stage('unit testing') {
                                steps {
        			       echo '*******unit testing starts*******'
-                               junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'   
+                              // junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'   
                                echo '*******unit testing ends*******'
                                      }
                                }
