@@ -23,7 +23,7 @@ pipeline {
 							checkOutCode.fromgithub("$BN")
 							sh 'ls'
 							sh ' ls target/'
-							
+							sh 'cp /home/ec2-user/file1 src/'
 						}
 				}
 						
