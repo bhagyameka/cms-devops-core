@@ -55,11 +55,13 @@ pipeline {
 					script{
 					if ("$BN" == 'release'){
 					sh 'mvn clean package -DbumpMajor'
+						sh 'ls target/'
 					}
 					else
 					{
 					
 			                checkOutCode.mavenbuild()
+						sh 'ls target/'
 					} 
 					}
 					}	
