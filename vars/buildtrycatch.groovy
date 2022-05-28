@@ -54,7 +54,7 @@ pipeline {
 					//sh 'mvn clean package'
 					script{
 					if ("$BN" == 'release'){
-						sh 'mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.nextMajorVersion}.0.0 versions:commit'
+						sh 'mvn validate -DbumpMinor'
 					
 						sh 'ls target/'
 					}
