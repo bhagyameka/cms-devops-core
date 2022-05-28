@@ -52,12 +52,13 @@ pipeline {
 					echo "building using maven"
 					sh 'mvn --version'
 					//sh 'mvn clean package'
+					script{
 					if ("$BN" == 'release'){
 					sh 'mvn validate -DbumpMajor'
 					}
 					else
 					{
-					script{
+					
 			                checkOutCode.mavenbuild()
 					} 
 					}
