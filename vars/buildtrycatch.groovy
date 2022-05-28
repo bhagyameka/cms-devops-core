@@ -53,8 +53,8 @@ pipeline {
 					sh 'mvn --version'
 					//sh 'mvn clean package'
 					script{
-					if ("$BN" == 'release'){
-						sh 'mvn clean package -DbumpMajor'
+					if ("$BN" == 'test'){
+						sh 'mvn --batch-mode release:update-versions -DdevelopmentVersion=2.0-SNAPSHOT'
 					
 						sh 'ls target/'
 					}
