@@ -52,9 +52,11 @@ pipeline {
 					echo "building using maven"
 					sh 'mvn --version'
 					//sh 'mvn clean package'
-					script{
+					sh 'mvn validate -DbumpMajor'
+					sh 'mvn clean package'
+					/*script{
 			                checkOutCode.mavenbuild()
-					}
+					} */
 					}	
 			}
 			stage('unit testing') {
