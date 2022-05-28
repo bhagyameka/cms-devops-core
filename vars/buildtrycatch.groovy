@@ -54,7 +54,7 @@ pipeline {
 					//sh 'mvn clean package'
 					script{
 					if ("$BN" == 'release'){
-					sh 'mvn validate -DbumpMajor'
+					sh 'mvn clean package -DbumpMajor'
 					}
 					else
 					{
