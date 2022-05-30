@@ -26,7 +26,7 @@ pipeline {
 							//sh 'cp /home/slave2/remoting.jar src/'
 							sh 'ls src/'
 							sh 'zip -r cms-application-ext.zip application.properties log4j2.properties'
-							sh 'mv cms-application-ext.zip cms-application-ext.1.`date +"%d-%m-%Y"`.${BUILD_NUMBER}.zip'
+							sh 'mv cms-application-ext.zip cms-application-ext.1.`date +"%d%m%y"`.${BUILD_NUMBER}.zip'
 							sh 'ls'
 							//sh 'mkdir new'
 							//sh 'ls '
