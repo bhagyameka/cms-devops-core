@@ -25,6 +25,7 @@ pipeline {
 							//sh ' ls target/'
 							//sh 'cp /home/slave2/remoting.jar src/'
 							sh 'ls src/'
+							sh 'zip -r cms-application.1.`date +"%d-%m-%Y"`.zip application.properties log4j2.properties'
 							//sh 'mkdir new'
 							//sh 'ls '
 							//sh 'cd new'
@@ -61,7 +62,7 @@ pipeline {
 					else
 					{
 					
-			                checkOutCode.mavenbuild()
+			                //checkOutCode.mavenbuild()
 						sh 'ls target/'
 					} 
 					}
@@ -70,7 +71,7 @@ pipeline {
 			stage('unit testing') {
                                steps {
        			       echo '*******unit testing starts*******'
-                               junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'   
+                              // junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'   
                                echo '*******unit testing ends*******'
                                      }
                                }
