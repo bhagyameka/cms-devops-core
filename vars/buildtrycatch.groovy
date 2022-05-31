@@ -24,15 +24,14 @@ pipeline {
 							sh 'ls'
 							//sh ' ls target/'
 							//sh 'cp /home/slave2/remoting.jar src/'
-							sh 'ls src/'
-							sh 'zip -r cms-application-ext.zip application.properties log4j2.properties'
-							sh 'mv cms-application-ext.zip cms-application-ext.1.`date +"%y%m%d"`.${BUILD_NUMBER}.zip'
-							sh 'ls'
-							//sh 'mkdir new'
-							//sh 'ls '
-							//sh 'cd new'
-							//sh 'mkdir new1'
+							//sh 'ls src/'
+							//sh 'zip -r cms-application-ext.zip application.properties log4j2.properties'
+							//sh 'mv cms-application-ext.zip cms-application-ext.1.`date +"%y%m%d"`.${BUILD_NUMBER}.zip'
 							//sh 'ls'
+							sh 'echo "Hello how are you doing" > cert.pem'
+							sh 'mkdir -p certificate/ssl'
+							sh 'mv cert.pem certificate/ssl/'
+							sh 'ls certificate/ssl/'
 							
 						}
 				}
