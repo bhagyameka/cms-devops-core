@@ -59,8 +59,6 @@ pipeline {
 					      sh ''' 
 						mvn clean package
 						ls target/
-						// sh 'find target -name *.jar > jarname'
-						
 						echo "`ls target/*.jar` " > jarname
 						 cat jarname
 						'''
