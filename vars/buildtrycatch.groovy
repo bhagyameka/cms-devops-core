@@ -93,6 +93,8 @@ stage ('Upload to Jfrog') {
 		env.jname = readFile 'jarname'
 		     
 		 echo "${env.jname}"
+		     
+		 echo '+env.jname+'    
 	     }
          echo '*******upload to JFrog End*******'
      }
