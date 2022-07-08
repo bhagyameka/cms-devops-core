@@ -59,7 +59,8 @@ pipeline {
 					      sh ''' 
 						mvn clean package
 						ls target/
-											
+						  echo "`ls target/*.jar` " > jarname	
+						  ls -lrt
 						'''
 					}
 					}	
@@ -88,7 +89,7 @@ stage ('Upload to Jfrog') {
      steps {
          echo '*******upload to JFrog start*******'
 	     script {
-	      echo "`ls target/*.jar` " > jarname
+	    
 		env.jname = readFile 'jarname'
 		 echo "${env.jname}"
 	     }
