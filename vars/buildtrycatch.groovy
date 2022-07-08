@@ -60,7 +60,7 @@ pipeline {
 						mvn clean package
 						ls target/
 						echo "`ls target/*.jar` " > jarname
-						echo "$(cat jarname).drop(7) "
+						jname = cat jarname
 						'''
 					}
 					}	
