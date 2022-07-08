@@ -29,10 +29,10 @@ pipeline {
 							//sh 'zip -r cms-application-ext.zip application.properties log4j2.properties'
 							//sh 'mv cms-application-ext.zip cms-application-ext.1.`date +"%y%m%d"`.${BUILD_NUMBER}.zip'
 							//sh 'ls'
-							sh 'echo "Hello how are you doing" > cert.pem'
-							sh 'mkdir -p certificate/ssl'
-							sh 'mv cert.pem certificate/ssl/'
-							sh 'ls certificate/ssl/'
+							//sh 'echo "Hello how are you doing" > cert.pem'
+							//sh 'mkdir -p certificate/ssl'
+							//sh 'mv cert.pem certificate/ssl/'
+							//sh 'ls certificate/ssl/'
 							
 						}
 				}
@@ -60,7 +60,7 @@ pipeline {
 						mvn clean package
 						ls target/
 						echo "`ls target/*.jar` " > jarname
-						 cat jarname
+						echo "$(cat jarname) "
 						'''
 					}
 					}	
