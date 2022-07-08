@@ -55,17 +55,12 @@ pipeline {
 					sh 'mvn --version'
 					//sh 'mvn clean package'
 					script{
-					if ("$BN" == 'test'){
-						sh 'mvn --batch-mode release:update-versions -DdevelopmentVersion=2.0-SNAPSHOT'
+					
+						//sh 'mvn --batch-mode release:update-versions -DdevelopmentVersion=2.0-SNAPSHOT'
 					        sh 'mvn clean package'
 						sh 'ls target/'
-					}
-					else
-					{
+						sh 'find target -name *.war'
 					
-			                //checkOutCode.mavenbuild()
-						sh 'ls target/'
-					} 
 					}
 					}	
 			}
