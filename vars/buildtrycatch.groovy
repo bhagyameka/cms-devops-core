@@ -60,8 +60,8 @@ pipeline {
 						//sh 'mvn --batch-mode release:update-versions -DdevelopmentVersion=2.0-SNAPSHOT'
 					        sh 'mvn clean package'
 						sh 'ls target/'
-						 sh 'find target -name *.jar > jar_name'
-						echo "${jar_name}"
+						 sh 'find target -name *.jar > jarname'
+						println "$jarname"
 					
 					}
 					}	
