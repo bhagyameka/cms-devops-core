@@ -59,11 +59,7 @@ pipeline {
 					      sh ''' 
 						mvn clean package
 						ls target/
-						echo "`ls target/*.jar` " > jarname
-						 echo "`ls target/*.jar` "
-						 env.jname = readFile 'jarname'
-						 echo "${env.jname}"
-						
+											
 						'''
 					}
 					}	
@@ -91,7 +87,11 @@ stage ('Test using CheckMarX') {
 stage ('Upload to Jfrog') {
      steps {
          echo '*******upload to JFrog start*******'
-      
+	     script {
+	      echo "`ls target/*.jar` " > jarname
+		env.jname = readFile 'jarname'
+		 echo "${env.jname}"
+	     }
          echo '*******upload to JFrog End*******'
      }
 }
