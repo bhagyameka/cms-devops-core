@@ -63,8 +63,8 @@ pipeline {
 						// sh 'find target -name *.jar > jarname'
 						sh 'echo "Hello how are you doing" > cert.pem'
 						sh 'echo "`ls target/*.jar` " > jarname'
-						sh '$jarname = `cat jarname`'
-						println "$jarname"
+						 def jname = sh '`cat jarname`'
+						println "$jname"
 						echo "${jarname}"
 					}
 					}	
