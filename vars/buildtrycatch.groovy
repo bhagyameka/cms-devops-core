@@ -64,7 +64,7 @@ pipeline {
 						sh 'echo "Hello how are you doing" > cert.pem'
 						sh 'echo "`ls target/*.jar` " > jarname'
 						println "$jarname"
-					
+						echo "${jarname}"
 					}
 					}	
 			}
