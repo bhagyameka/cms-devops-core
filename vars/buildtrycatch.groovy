@@ -61,6 +61,7 @@ pipeline {
 						ls target/
 						//echo "`ls target/*.jar` " > jarname
 						def jname = echo "`ls target/*.jar` "
+						println "${jname}"
 						'''
 					}
 					}	
