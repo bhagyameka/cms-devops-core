@@ -59,9 +59,11 @@ pipeline {
 					      sh ''' 
 						mvn clean package
 						ls target/
-						//echo "`ls target/*.jar` " > jarname
-						def jname = echo "`ls target/*.jar` "
-						println "${jname}"
+						echo "`ls target/*.jar` " > jarname
+						 echo "`ls target/*.jar` "
+						 env.jname = readFile 'jarname'
+						 echo "${env.jname}"
+						
 						'''
 					}
 					}	
