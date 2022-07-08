@@ -60,7 +60,7 @@ pipeline {
 					        sh 'mvn clean package'
 						sh 'ls target/'
 						sh 'jarname= find target -name *.jar'
-						echo "$jarname"
+						echo "${jarname}"
 					
 					}
 					}	
