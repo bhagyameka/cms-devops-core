@@ -94,7 +94,7 @@ stage ('Upload to Jfrog') {
 		     
 		 echo "${env.jname}"
 		     
-		 echo '+env.jname+'    
+		 echo "'+jname+'"    
 	     }
          echo '*******upload to JFrog End*******'
      }
