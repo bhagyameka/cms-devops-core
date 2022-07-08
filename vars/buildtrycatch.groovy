@@ -93,7 +93,8 @@ stage ('Upload to Jfrog') {
 		env.jname = readFile 'warname'
 		     
 		 echo "${env.jname}"
-		     
+		 env.jn = "${env.jname}".drop(7) 
+		     echo "${env.jn}"
 		  
 	     }
          echo '*******upload to JFrog End*******'
