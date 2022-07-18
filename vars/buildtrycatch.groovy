@@ -6,7 +6,7 @@ pipeline {
 		        jarname = null
 		        ag = "${agent}"
 		}
-		agent {label 'slave2'}
+		agent {label ''+ag+''}
 		stages {
 			stage('Source Code from SCM') {
 				steps {
