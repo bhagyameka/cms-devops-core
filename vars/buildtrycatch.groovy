@@ -1,9 +1,10 @@
-def call(String br = 'null'){
+def call(String br = 'null',String ag = 'null'){
 pipeline {
  
 	environment {
 			BN = "${br}"
 		        jarname = null
+		        ag = "${agent}"
 		}
 		agent {label 'slave2'}
 		stages {
@@ -11,6 +12,8 @@ pipeline {
 				steps {
 					echo "You have chosen branch:"
 	                                println "$BN"
+					println "$ag"
+					
 					sh 'pwd'
 					script{
 						try{
